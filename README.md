@@ -7,3 +7,6 @@ Moreover, by offering information on specific organizations and causes as well a
 
 Visit the website here to check it out for yourself!: https://protest-maps.firebaseapp.com/
 
+----------------------------
+Required to run Python code:
+pandas, geopy, bs4, folium, csv, json
