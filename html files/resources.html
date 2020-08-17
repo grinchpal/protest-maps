@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Organizations</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.header {
+  padding: 30px;
+  text-align: left;
+  background: #bc4639;
+  color: white;
+}
+
+.header h1 {
+  font-size: 40px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  width: 25%;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main {
+  background-color:  #f2f2f2;
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #333;
+  color: #f2f2f2;
+}
+
+/* resource card */
+.card {
+  transition: 0.3s;
+  width: 20%;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left:10px;
+  margin-right:10px;
+}
+.container {
+  padding: 2px 16px;
+}
+
+/* let's go! button */
+.button {
+  display: flex;
+  transition: 0.3s;
+  background-color: #d3d3d3;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left:10px;
+  margin-right:10px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.button:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: #bc4639;
+}
+
+/* for links */
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  color: black;
+}
+
+#inner {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Protest Maps</h1>
+  <p>Locate protests happening near you and learn about the country's biggest movements.</p>
+</div>
+
+<div class="navbar">
+    <a href="maps.html">MAPS</a>
+    <a href="organizations.html">ORGANIZATIONS</a>
+    <a href="resources.html">RESOURCES</a>
+    <a href="about.html">ABOUT</a>
+</div>
+
+<div class="main">
+  <div class="row" style="text-align:center">
+    <h2><b>RESOURCES</b></h2>
+  </div>
+  <div class="row" id="inner">
+    <div class="card">
+      <div class="container">
+        <h3><b>CONTACT</b></h3> 
+        <p>Email templates, call scripts, and contact info for important people.</p>
+        <img src="https://i.pinimg.com/originals/b5/d7/19/b5d7198734ee5174b581630628ecfdd6.png" style="width:100%"></img>
+        <a href="call.html" class="link"><div class="button"><b>Let's go!</b></div></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="container">
+        <h3><b>DONATE</b></h3>
+        <p>A list of places to donate, as well as videos to watch which will donate their ad revenue.</p>
+        <img src="https://pngriver.com/wp-content/uploads/2017/12/download-Dollar-Sign-Symbols-PNG-transparent-images-transparent-backgrounds-PNGRIVER-COM-dollar-sign-png-image-92805.png" style="width:100%"></img>
+        <a href="donate.html" class="link"><div class="button"><b>Let's go!</b></div></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="container">
+        <h3><b>ORGANIZE</b></h3>
+        <p>Resources for organizing your own demonstrations, protests, and educational events.</p>
+        <img src="https://cdn0.iconfinder.com/data/icons/business-management-line-2/24/megaphone-512.png" style="width:100%"></img>
+        <a href="organize.html" class="link"><div class="button"><b>Let's go!</b></div></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="container">
+        <h3><b>EDUCATE</b></h3>
+        <p>Anti-racist movies, documentaries, literature, podcasts, and more.</p>
+        <img src="https://i.pinimg.com/originals/fb/fc/79/fbfc7905f17f5c4a65df4498f318cede.png" style="width:100%"></img>
+        <a href="educate.html" class="link"><div class="button"><b>Let's go!</b></div></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Duckhacks for Social Good 2020</h2>
+</div>
+
+</body>
+</html>

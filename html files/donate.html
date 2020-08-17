@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Donate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.header {
+  padding: 30px;
+  text-align: left;
+  background: #bc4639;
+  color: white;
+}
+
+.header h1 {
+  font-size: 40px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  width: 25%;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main {
+  background-color:  #f2f2f2;
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #333;
+  color: #f2f2f2;
+}
+
+/* org card */
+.card {
+  transition: 0.3s;
+  width: 100%;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left:5px;
+  margin-right:5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: #bc4639;
+}
+.container {
+  padding: 2px 16px;
+}
+
+/* org card2 */
+.card2 {
+  transition: 0.3s;
+  width: 30%;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left:5px;
+  margin-right:5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card2:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: #bc4639;
+}
+.container2 {
+  padding: 2px 16px;
+}
+
+/* org card3 */
+.card3 {
+  transition: 0.3s;
+  width: 20%;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left:5px;
+  margin-right:5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card3:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: #bc4639;
+}
+.container3 {
+  padding: 2px 16px;
+}
+
+/* dropdown menu stuff*/
+.dropbtn {
+  background-color: #bc4639;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  max-height:250px;/* you can change as you need it */
+  overflow:auto;/* to get scroll */
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #9c382d;
+}
+
+/* for yt vids */
+.ytcontainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#inner {
+  margin: 0 auto;
+}
+
+/* Style tab links, content (and add height:100% for full page content) */
+.tablink {
+  background-color: #ebebeb;
+  color: black;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+.tablink:hover {
+  background-color: #bc4639;
+}
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 50px 20px;
+  height: 100%;
+}
+
+/* tabs */
+#BailFunds {background-color: #d3d3d3;}
+#Organizations {background-color: #d3d3d3;}
+#Memorial {background-color: #d3d3d3;}
+#Individual {background-color: #d3d3d3;}
+#NoMoney {background-color: #d3d3d3;}
+
+/* bail tabs */
+#National {background-color: #d3d3d3;}
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Protest Maps</h1>
+  <p>Locate protests happening near you and learn about the country's biggest movements.</p>
+</div>
+
+<div class="navbar">
+    <a href="maps.html">MAPS</a>
+    <a href="organizations.html">ORGANIZATIONS</a>
+    <a href="resources.html">RESOURCES</a>
+    <a href="about.html">ABOUT</a>
+</div>
+
+<div class="main">
+  <div class="row">
+    <h2><b>RESOURCES > DONATE</b></h2>
+  </div>
+  <button class="tablink" onclick="openPage('BailFunds', this, '#d3d3d3')" id="defaultOpen"><b>Bail</b></button>
+  <button class="tablink" onclick="openPage('Organizations', this, '#d3d3d3')"><b>Black-led Orgs</b></button>
+  <button class="tablink" onclick="openPage('Memorial', this, '#d3d3d3')"><b>Memorial</b></button>
+  <button class="tablink" onclick="openPage('NoMoney', this, '#d3d3d3')"><b>No money?</b></button>
+  <div id="BailFunds" class="tabcontent">
+  	<h3>Bail Funds</h3>
+    <p>List credit to https://bailfunds.github.io</p>
+    <div class="dropdown">
+      <button class="dropbtn">Jump to Location</button>
+      <div class="dropdown-content">
+        <a href="#ntl">National</a>
+        <a href="#al">Alabama</a>
+        <a href="#az">Arizona</a>
+        <a href="#ar">Arkansas</a>
+        <a href="#ca">California</a>
+        <a href="#co">Colorado</a>
+        <a href="#ct">Connecticut</a>
+        <a href="#de">Delaware</a>
+        <a href="#fl">Florida</a>
+        <a href="#ga">Georgia</a>
+        <a href="#hi">Hawai'i</a>
+        <a href="#id">Idaho</a>
+        <a href="#il">Illinois</a>
+        <a href="#in">Indiana</a>
+        <a href="#ia">Iowa</a>
+        <a href="#ks">Kansas</a>
+        <a href="#ky">Kentucky</a>
+        <a href="#la">Louisiana</a>
+        <a href="#me">Maine</a>
+        <a href="#md">Maryland</a>
+        <a href="#ma">Massachusetts</a>
+        <a href="#mi">Michigan</a>
+        <a href="#mn">Minnesota</a>
+        <a href="#ms">Mississippi</a>
+        <a href="#mo">Missouri</a>
+        <a href="#mt">Montana</a>
+        <a href="#ne">Nebraska</a>
+        <a href="#nv">Nevada</a>
+        <a href="#nh">New Hampshire</a>
+        <a href="#nj">New Jersey</a>
+        <a href="#nm">New Mexico</a>
+        <a href="#ny">New York</a>
+        <a href="#nc">North Carolina</a>
+        <a href="#nd">North Dakota</a>
+        <a href="#oh">Ohio</a>
+        <a href="#ok">Oklahoma</a>
+        <a href="#or">Oregon</a>
+        <a href="#pa">Pennsylvania</a>
+        <a href="#ri">Rhode Island</a>
+        <a href="#sc">South Carolina</a>
+        <a href="#sd">South Dakota</a>
+        <a href="#tn">Tennessee</a>
+        <a href="#tx">Texas</a>
+        <a href="#ut">Utah</a>
+        <a href="#vt">Vermont</a>
+        <a href="#va">Virginia</a>
+        <a href="#wa">Washington</a>
+        <a href="#dc">Washington, DC</a>
+        <a href="#wv">West Virginia</a>
+        <a href="#wi">Wisconsin</a>
+        <a href="#wy">Wyoming</a>
+        <a href="#can">Canada</a>
+      </div>
+    </div>
+    <div id="ntl" class="row"><h3>National</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.communityjusticeexchange.org/nbfn-directory');" style="cursor: pointer;">
+        <h4><b>National Bail Fund Network</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://secure.givelively.org/donate/the-bail-project');"style="cursor: pointer;">
+        <h4><b>The Bail Project</b></h4>
+      </div>
+    </div>
+    <div id="al" class="row"><h3>Alabama</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://givebutter.com/NobodyLeftBehindBailFund');" style="cursor: pointer;">
+        <h4><b>(Birmingham) No One Left Behind Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.paypal.me/hsvbailfund');" style="cursor: pointer;">
+        <h4><b>Huntsville Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.mgmbailout.com/');" style="cursor: pointer;">
+        <h4><b>Montgomery Bail Out Fund</b></h4>
+      </div>
+    </div>
+    <div id="az" class="row"><h3>Arizona</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://secure.everyaction.com/lFZFGA1BpUa9kyYYgSxSKw2?fbclid=IwAR3YvwJy2ZFuGfVk0BL1rWX8UYOOx2Mbv8NVEV4MjlEXCSHDv-lx8l1H6IM');" style="cursor: pointer;">
+        <h4><b>(Phoenix) Black People's Justice Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://watchtucson.com/');" style="cursor: pointer;">
+        <h4><b>Tuscon Second Chance Community Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="ar" class="row"><h3>Arkansas</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.arfreedomfund.com/');" style="cursor: pointer;">
+        <h4><b>Arkansas Freedom Fund</b></h4>
+      </div>
+    </div>
+    <div id="ca" class="row"><h3>California</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('http://www.antipoliceterrorproject.org/donate');" style="cursor: pointer;">
+        <h4><b>(Bay Area) Anti-Police Terror Project</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://rally.org/ARCbailfund');" style="cursor: pointer;">
+        <h4><b>Bay Area Anti-Repression Committee Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://linktr.ee/PBO');" style="cursor: pointer;">
+        <h4><b>Oakland's People's Breakfast Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://actionnetwork.org/fundraising/ncrbailfund/');" style="cursor: pointer;">
+        <h4><b>NorCal Resist Activist BAIL & ICE Bond Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://siliconvalleydsa.org/donations/');" style="cursor: pointer;">
+        <h4><b>Silicon Valley DSA Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://linktr.ee/actionbailfundla');" style="cursor: pointer;">
+        <h4><b>Los Angeles Action Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.gofundme.com/f/peoples-city-council-ticket-fund');" style="cursor: pointer;">
+        <h4><b>Peoples City Council Freedom Fund*</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.gofundme.com/f/orange-county-bail-fund');" style="cursor: pointer;">
+        <h4><b>Orange County Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.gofundme.com/f/help-us-raise-funds-to-support-our-community');" style="cursor: pointer;">
+        <h4><b>San Diego Community Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.paypal.me/SLOBailFund');" style="cursor: pointer;">
+        <h4><b>SLO Bail Fund</b></h4>
+      </div>
+    </div>
+    <p class="row" style="color:gray">*This fund is currently closed to donations and redistributing funds to BLM LA, NLG, and other orgs to support ongoing protests (see more at link).</p>
+    <div id="co" class="row"><h3>Colorado</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://fundly.com/coloradofreedom');" style="cursor: pointer;">
+        <h4><b>Colorado Freedom Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('http://chinookcenter.org/Colorado-springs-protest-support-fund/');" style="cursor: pointer;">
+        <h4><b>Colorado Springs Protest Support Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.gofundme.com/f/funds-for-protesters-against-police-brutality');" style="cursor: pointer;">
+        <h4><b>BLM Denver Fund</b></h4>
+      </div>
+    </div>
+    <div id="ct" class="row"><h3>Connecticut</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('http://www.ctbailfund.org/');" style="cursor: pointer;">
+        <h4><b>Connecticut Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="de" class="row"><h3>Delaware</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.gofundme.com/f/fnbbailfundwilm');" style="cursor: pointer;">
+        <h4><b>FNB Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="fl" class="row"><h3>Florida</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.gofundme.com/f/f12-protesters-support?fbclid=IwAR0KGDvQg6S_L6vAVOlyxrl6GZQs-JMcrsKVeu7J92gg959ZWNplP18PtTQ');" style="cursor: pointer;">
+        <h4><b>IWOC Statewide Bail Fund</b></h4>
+      </div>
+    	<div class="card" onclick="window.open('https://actionnetwork.org/fundraising/alachua-county-covid-19-bond-fund');" style="cursor: pointer;">
+        <h4><b>Alachua County Bond Fund</b></h4>
+      </div>
+    	<div class="card" onclick="window.open('https://www.gofundme.com/f/duval-bail-out');" style="cursor: pointer;">
+        <h4><b>Jacksonville Community Action Committee</b></h4>
+      </div>
+    	<div class="card" onclick="window.open('https://www.paypal.me/freethemall');" style="cursor: pointer;">
+        <h4><b>(Miami) (F)empower Community Bond Fund</b></h4>
+      </div>
+    	<div class="card" onclick="window.open('https://www.lgbtqfund.org/donate-1');" style="cursor: pointer;">
+        <h4><b>(Miami) Florida LGBTQ Freedom Fund</b></h4>
+      </div>
+    	<div class="card" onclick="window.open('https://www.gofundme.com/f/collier-county-bail-fund');" style="cursor: pointer;">
+        <h4><b>(Naples) Collier County Bail Fund</b></h4>
+      </div>
+    	<div class="card" onclick="window.open('https://www.paypal.me/otownsquadd');" style="cursor: pointer;">
+        <h4><b>Orlando Dream Defenders Bail Fund</b></h4>
+      </div>
+    	<div class="card" onclick="window.open('https://www.gofundme.com/f/tampa-bay-community-support-fund');" style="cursor: pointer;">
+        <h4><b>Tampa Bay Community Support Fund</b></h4>
+      </div>
+    </div>
+    <div id="ga" class="row"><h3>Georgia</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('http://atlsolidarity.org/');" style="cursor: pointer;">
+        <h4><b>Atlanta Solidarity Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.aadmovement.org/athens-freedom-fund/');" style="cursor: pointer;">
+        <h4><b>Athens Freedom Fund</b></h4>
+      </div>
+    </div>
+    <div id="hi" class="row"><h3>Hawai'i</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://hawaiicommunitybailfund.org/');" style="cursor: pointer;">
+        <h4><b>Hawaiʻi Community Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="id" class="row"><h3>Idaho</h3></div>
+    <p class="row" style="color:gray"></p>
+    <div id="il" class="row"><h3>Illinois</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://champaigncountybailoutcoalition.wordpress.com/');" style="cursor: pointer;">
+        <h4><b>Champaign County Bailout Coalition</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://chicagobond.org/');" style="cursor: pointer;">
+        <h4><b>Chicago Community Bond Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.wincoilbondproject.org/donate');" style="cursor: pointer;">
+        <h4><b>(Rockford) Winnebago Bond Project</b></h4>
+      </div>
+    </div>
+    <div id="in" class="row"><h3>Indiana</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://m.facebook.com/Indy10People');" style="cursor: pointer;">
+        <h4><b>BLM Indianapolis</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.paypal.com/pools/c/8pCHfGXnRp');" style="cursor: pointer;">
+        <h4><b>Summit City Mutual Aid and Defense Fund</b></h4>
+      </div>
+    </div>
+    <div id="ia" class="row"><h3>Iowa</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://communitybondproject.networkforgood.com/projects/101939-free-our-protesters');" style="cursor: pointer;">
+        <h4><b>(Des Moines) Prarielands Freedom Fund</b></h4>
+      </div>
+    </div>
+    <div id="ks" class="row"><h3>Kansas</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.paypal.me/lawrencebailfund');" style="cursor: pointer;">
+        <h4><b>BLM Lawrence Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://ictdsa.org/bail-fund');" style="cursor: pointer;">
+        <h4><b>Wichita Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="ky" class="row"><h3>Kentucky</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://afgj.salsalabs.org/louisvillebailfund/index.html');" style="cursor: pointer;">
+        <h4><b>Louisville Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://actionnetwork.org/fundraising/lexington-bail-fund?fbclid=IwAR3L2Ciw97_cBM5M1pAAy16O9PVYiJSIl-qSjohymGOm4qxVioJHrzAOyYM');" style="cursor: pointer;">
+        <h4><b>Lexington Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="la" class="row"><h3>Louisiana</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://donorbox.org/safety-freedom-fund-eoy');" style="cursor: pointer;">
+        <h4><b>New Orleans Safety & Freedom Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.ywca-br.org/community-bail-fund');" style="cursor: pointer;">
+        <h4><b>YWCA Greater Baton Rouge Community Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="me" class="row"><h3>Maine</h3></div>
+    <p class="row" style="color:gray"></p>
+    <div id="md" class="row"><h3>Maryland</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://baltimoreactionlegal.networkforgood.com/projects/99878-cells-to-safety-campaign-final');" style="cursor: pointer;">
+        <h4><b>Baltimore Legal Action Team Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="ma" class="row"><h3>Massachusetts</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.massbailfund.org/');" style="cursor: pointer;">
+        <h4><b>Massachusetts Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="mi" class="row"><h3>Michigan</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://michigansolidaritybailfund.com/');" style="cursor: pointer;">
+        <h4><b>Michigan Solidarity Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://donorbox.org/support-the-detroit-justice-center-1');" style="cursor: pointer;">
+        <h4><b>Detroit Justice Center</b></h4>
+      </div>
+    </div>
+    <div id="mi" class="row"><h3>Minnesota</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://minnesotafreedomfund.org/');" style="cursor: pointer;">
+        <h4><b>Minnesota Freedom Fund*</b></h4>
+      </div>
+    </div>
+    <p class="row" style="color:gray">*Due to an influx of donations, this bail fund has suggested to donate elsewhere.</p>
+    <div id="ms" class="row"><h3>Mississippi</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://secure.actblue.com/donate/ms-bail-fund');" style="cursor: pointer;">
+        <h4><b>Mississippi Bail Fund Collective</b></h4>
+      </div>
+    </div>
+    <div id="mo" class="row"><h3>Missouri</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.paypal.com/pools/c/8dFiVVyGMN');" style="cursor: pointer;">
+        <h4><b>Reale Justice Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.kccommunitybailfund.com/');" style="cursor: pointer;">
+        <h4><b>Kansas City Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://actionnetwork.org/fundraising/donate-to-the-one-struggle-kc-legal-fund');" style="cursor: pointer;">
+        <h4><b>One Struggle KC Legal Fund</b></h4>
+      </div>
+    </div>
+    <div id="mt" class="row"><h3>Montana</h3></div>
+    <p class="row" style="color:gray"></p>
+    <div id="ne" class="row"><h3>Nebraska</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.paypal.me/neleftcoalition');" style="cursor: pointer;">
+        <h4><b>Neighbors for Common Good Bail Fund*</b></h4>
+      </div>
+    </div>
+    <p class="row" style="color:gray">*Put "Bail" on memo line.</p>
+    <div id="nv" class="row"><h3>Nevada</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://secure.actblue.com/donate/vegasfreedomfund');" style="cursor: pointer;">
+        <h4><b>Vegas Freedom Fund</b></h4>
+      </div>
+    </div>
+    <div id="nh" class="row"><h3>New Hampshire</h3></div>
+    <p class="row" style="color:gray"></p>
+    <div id="nj" class="row"><h3>New Jersey</h3></div>
+    <p class="row" style="color:gray">This region does not have cash bail. Please donate elsewhere.</p>
+    <div id="nm" class="row"><h3>New Mexico</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://abqpeaceandjustice.org/index.php/donate');" style="cursor: pointer;">
+        <h4><b>Albuquerque Center for Peace & Justice Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="ny" class="row"><h3>New York</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://afgj.salsalabs.org/actionbailfund/index.html');" style="cursor: pointer;">
+        <h4><b>Action Bail Fund NYC</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.paypal.com/pools/c/8pAK2AzvDg');" style="cursor: pointer;">
+        <h4><b>Albany Bail Fund For Black Lives</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://fundrazr.com/11fcAd?ref=ab_e8vImf_ab_8dfq3zLk9z18dfq3zLk9z1');" style="cursor: pointer;">
+        <h4><b>SURJ Buffalo Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://venmo.com/blmroc');" style="cursor: pointer;">
+        <h4><b>BLM Rochester</b></h4>
+      </div>
+    </div>
+    <div id="nc" class="row"><h3>North Carolina</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://emancipatenc.org/freedom-fighter-bond-fund/');" style="cursor: pointer;">
+        <h4><b>Freedom Fighter Bail Bond*</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://cash.app/$WereStillHere');" style="cursor: pointer;">
+        <h4><b>Charlotte Uprising</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.nccbailfund.org/');" style="cursor: pointer;">
+        <h4><b>North Carolina Community Bail Fund of Durham</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://forsythcountycbf.org/');" style="cursor: pointer;">
+        <h4><b>Forsyth County Community Bail Fund</b></h4>
+      </div>
+    </div>
+    <p class="row" style="color:gray">*Please click the checkbox under "Freedom Fighter Bond Fund Designation".</p>
+    <div id="nd" class="row"><h3>North Dakota</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://linktr.ee/fmsolidarityfund?fbclid=IwAR3bMYNluc0XHi2VnQBNy_EBA7W3anpEMmaairLg9vL3IP4paWJbz1MPeT8');" style="cursor: pointer;">
+        <h4><b>Fargo Moorhead Mutual Aid</b></h4>
+      </div>
+    </div>
+    <div id="oh" class="row"><h3>Ohio</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.paypal.com/pools/c/8pz5hovrmY');" style="cursor: pointer;">
+        <h4><b>Canton/Akron Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.paypal.me/blmcle');" style="cursor: pointer;">
+        <h4><b>BLM Cleveland</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.paypal.me/columbusfreedomfund');" style="cursor: pointer;">
+        <h4><b>Columbus Freedom Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.givelify.com/givenow/1.0/NTU5MjE=/selection');" style="cursor: pointer;">
+        <h4><b>(Cincinnati) Beloved Community Church Bail Fund*</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.paypal.me/youngstownfreedomfun');" style="cursor: pointer;">
+        <h4><b>Youngstown Freedom Fund</b></h4>
+      </div>
+    </div>
+    <p class="row" style="color:gray">*Choose an amount and click Cincinnati Bail Fund on next screen.</p>
+    <div id="ok" class="row"><h3>Oklahoma</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.paypal.me/BLMOKC');" style="cursor: pointer;">
+        <h4><b>BLM OKC</b></h4>
+      </div>
+    </div>
+    <div id="or" class="row"><h3>Oregon</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.gofundme.com/f/pdx-protest-bail-fund');" style="cursor: pointer;">
+        <h4><b>PDX Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://portlandfreedomfund.org/');" style="cursor: pointer;">
+        <h4><b>Portland Freedom Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://venmo.com/EugeneBailFund');" style="cursor: pointer;">
+        <h4><b>Eugene Jail Support and Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="pa" class="row"><h3>Pennsylvania</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://dauphincountybailfund.org/');" style="cursor: pointer;">
+        <h4><b>Dauphin County Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.gofundme.com/f/lancaster-bail-fund');" style="cursor: pointer;">
+        <h4><b>Lancaster Bail Fund for #BlackLivesMatter</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.phillybailout.com/');" style="cursor: pointer;">
+        <h4><b>Philadelphia Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.phillybailfund.org/');" style="cursor: pointer;">
+        <h4><b>Philadelphia Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.bukitbailfund.org/donate');" style="cursor: pointer;">
+        <h4><b>Bukit Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="ri" class="row"><h3>Rhode Island</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.gofundme.com/f/fangbailfund');" style="cursor: pointer;">
+        <h4><b>FANG Community Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="sc" class="row"><h3>South Carolina</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('http://sodacitybail.org/');" style="cursor: pointer;">
+        <h4><b>(Columbia) Soda City Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.blackliberationfund.org/');" style="cursor: pointer;">
+        <h4><b>(Charleston) Black Liberation Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://cash.app/$UpstateBLM');" style="cursor: pointer;">
+        <h4><b>(Greenville) BLM Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="sd" class="row"><h3>South Dakota</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://bhlegalfund.org/');" style="cursor: pointer;">
+        <h4><b>Black Hills Bail & Legal Defense Fund</b></h4>
+      </div>
+    </div>
+    <div id="tn" class="row"><h3>Tennessee</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('http://www.calebcha.org/bailfund.html');" style="cursor: pointer;">
+        <h4><b>Hamilton County Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://venmo.com/EndMoneyBail-Knoxville');" style="cursor: pointer;">
+        <h4><b>End Money Bail Knoxville Bail Fund*</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://justcity.org/what-we-do/mcbfund/');" style="cursor: pointer;">
+        <h4><b>Memphis Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://midsouthpeace.org/get-involved/donate-to-support-the-black-lives-matter-community-bail-fund/');" style="cursor: pointer;">
+        <h4><b>Mid-South Peace BLM Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://nashvillebailfund.org/');" style="cursor: pointer;">
+        <h4><b>Nashville Community Bail Fund</b></h4>
+      </div>
+    </div>
+    <p class="row" style="color:gray">*Please caption "BLM".</p>
+    <div id="tx" class="row"><h3>Texas</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://faithintx.org/bailfund/');" style="cursor: pointer;">
+        <h4><b>(Dallas) Luke 4:18 Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://venmo.com/fianza-fund');" style="cursor: pointer;">
+        <h4><b>(El Paso) Fianza Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://actionnetwork.org/fundraising/tarrant-county-community-bail-fund');" style="cursor: pointer;">
+        <h4><b>Tarrant County Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('http://organizetexas.org/topcommunitybailoutfund/');" style="cursor: pointer;">
+        <h4><b>Texas Organizing Project Bailout Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.houstonbailfund.com/');" style="cursor: pointer;">
+        <h4><b>Houston Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.phly.co/public/N4MzTAyyrNQQE6JJy');" style="cursor: pointer;">
+        <h4><b>Mutual Aid Collective ATX</b></h4>
+      </div>
+    </div>
+    <div id="ut" class="row"><h3>Utah</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.gofundme.com/f/c2mvvn-support-protesters-arrested-by-slcpd');" style="cursor: pointer;">
+        <h4><b>Salt Lake City Community Bail</b></h4>
+      </div>
+    </div>
+    <div id="vt" class="row"><h3>Vermont</h3></div>
+    <p class="row" style="color:gray"></p>
+    <div id="va" class="row"><h3>Virginia</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://rvabailfund.org/');" style="cursor: pointer;">
+        <h4><b>Richmond Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://chuffed.org/project/rjs-bail-fund');" style="cursor: pointer;">
+        <h4><b>Roanoke Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.facebook.com/LyhBailFund/');" style="cursor: pointer;">
+        <h4><b>Lynchburg Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.facebook.com/LyhBailFund/');" style="cursor: pointer;">
+        <h4><b>(Tidewater, Hampton Roads) 757 Solidarity Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="wa" class="row"><h3>Washington</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://blacklivesseattle.org/bail-fund/');" style="cursor: pointer;">
+        <h4><b>BLM Seattle Freedom Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.nwcombailfund.org/');" style="cursor: pointer;">
+        <h4><b>Northwest Community Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://www.paypal.com/paypalme/olybail');" style="cursor: pointer;">
+        <h4><b>Olympia Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="dc" class="row"><h3>Washington, DC</h3></div>
+    <p class="row" style="color:gray">This region does not have cash bail. Please donate elsewhere.</p>
+    <div id="wv" class="row"><h3>West Virginia</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://secure.actblue.com/donate/blacklivesmatterwv?fbclid=IwAR0LhSbJi1j8_wT3nrzsH3J55Q-7JBg_AAoQ-7pOgnr9bj4UwcfWHAIUcTg');" style="cursor: pointer;">
+        <h4><b>BLM West Virginia Bail Fund</b></h4>
+      </div>
+    </div>
+    <div id="wi" class="row"><h3>Wisconsin</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://freethe350bailfund.wordpress.com/');" style="cursor: pointer;">
+        <h4><b>(Madison) Free the 350 Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://supportwomenshealth.salsalabs.org/mkefreedomfund/index.html');" style="cursor: pointer;">
+        <h4><b>Milwaukee Freedom Fund</b></h4>
+      </div>
+    </div>
+    <div id="wy" class="row"><h3>Wyoming</h3></div>
+    <p class="row" style="color:gray"></p>
+    <div id="can" class="row"><h3>Canada</h3></div>
+    <div class="row">
+    	<div class="card" onclick="window.open('https://www.gofundme.com/f/toronto-protestor-bail-fund');" style="cursor: pointer;">
+        <h4><b>Toronto Protestor Bail Fund</b></h4>
+      </div>
+      <div class="card" onclick="window.open('https://en.manif.co/');" style="cursor: pointer;">
+        <h4><b>(Montréal) Standing Committee for the Support of Demonstrators</b></h4>
+      </div>
+    </div>
+  </div>
+	<div id="Organizations" class="tabcontent">
+ 		<h3>Black-led Organizations</h3>
+  	<p>Donate directly to organizations that are advocating for change. LGBTQ+ organizations are highlighted in <b style="background-color:pink">pink.</b></p> 
+    <div class="row" id="inner">
+      <div class="card3" onclick="window.open('https://blacklivesmatter.com/');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>Black Lives Matter</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('https://www.naacpldf.org/');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>NAACP Legal Defense Fund</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('https://www.joincampaignzero.org/#vision');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>Campaign Zero</b></h4> 
+        </div>
+      </div>
+      <div class="card3"  onclick="window.open('ttps://www.flipcause.com/secure/donate/NjY0OTc=');" style="cursor:pointer; background-color: pink">
+        <div class="container3">
+          <h4><b>Marsha P. Johnson Institute</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('#');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>org</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('#');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>org</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('#');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>org</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('#');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>org</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('#');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>org</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('#');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>org</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('#');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>org</b></h4> 
+        </div>
+      </div>
+      <div class="card3" onclick="window.open('#');" style="cursor:pointer;">
+        <div class="container3">
+          <h4><b>org</b></h4> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Memorial" class="tabcontent">
+  	<h3>Victim Memorial Funds</h3>
+  	<p>GoFundMes for those affected by police brutality. List credit to https://blacklivesmatters.carrd.co/#donate</p>
+    <div class="row">
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/georgefloyd');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>George Floyd</h3></p>
+          <img width="100%" src="https://cdn.cnn.com/cnnnext/dam/assets/200610132604-photo-george-floyd-super-169.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/george-floyd-bigfloyd');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>George Floyd's Sister</h3></p>
+          <img width="100%" src="https://kstp.com/kstpImages/repository/2020-05/BridgettFloyd.JPG">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/gianna-floyd-daughter-of-george-floyd-fund');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>George Floyd's Daughter</h3></p>
+          <img width="100%" src="https://s.abcnews.com/images/GMA/200603_gma_pilgrim1_hpMain_16x9_1600.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/i-run-with-maud');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Ahmaud Arbery</h3></p>
+          <img width="100%" src="https://media12.s-nbcnews.com/j/MSNBC/Components/Video/202005/nn_bal_ahmaud_arbery_shooting_200516_1920x1080.focal-760x428.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/brad-levi-ayala');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Brad Levi Ayala</h3></p>
+          <img width="100%" src="https://assets.change.org/photos/8/ux/sj/xvuXsjgBNGcfIWY-1600x900-noPad.jpg?1591139287">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/official-gofundme-for-rayshard-brooks');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Rayshard Brooks</h3></p>
+          <img width="100%" src="https://news.immitate.com/wp-content/uploads/2020/06/video-emerges-of-rayshard-brooks-months-before-death.png">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/peace-and-healing-for-darnella');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Darnella Frazier</h3></p>
+          <img width="100%" src="https://images0.persgroep.net/rcs/V84Gokx5U7tfQ1KD_eUaIMwZaXw/diocontent/171676922/_fitwidth/1240?appId=93a17a8fd81db0de025c8abd1cca1279&quality=0.9">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/csgskf-love-and-support-for-leslie');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Leslie Furcron</h3></p>
+          <img width="100%" src="https://timesofsandiego.com/wp-content/uploads/2020/06/Leslie-Furcron-640-1280x720.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/destiny-harrison-funeral');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Destiny Harrison</h3></p>
+          <img width="100%" src="https://gossiponthis.com/wp-content/uploads/2019/12/destiny-harris-madam-d-beauty-bar-baltimore.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/justice-for-dion-johnson');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Dion Johnson</h3></p>
+          <img width="100%" src="https://assets.change.org/photos/4/dp/or/KmdPOrdsUzuREBI-1600x900-noPad.jpg?1590812517">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/eumzn-justice-for-jamee?utm_source=twitter&utm_medium=social&utm_campaign=p_cp+share-sheet');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Jamee Johnson</h3></p>
+          <img width="100%" src="https://ionenewsone.files.wordpress.com/2019/12/15768536021748.jpg?quality=80&strip=all&w=450">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/justice-for-said-joquin');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Said Joquin</h3></p>
+          <img width="100%" src="https://media.king5.com/assets/KING/images/68c94ad1-1a99-4965-8ddd-ce15f48decc7/68c94ad1-1a99-4965-8ddd-ce15f48decc7_1920x1080.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/justice-for-regis');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Regis Korchinski-Pacquet</h3></p>
+          <img width="100%" src="https://i.ytimg.com/vi/7svJjtKoWtE/maxresdefault.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/justicefordavidmcatee');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>David McAtee</h3></p>
+          <img width="100%" src="https://pyxis.nymag.com/v1/imgs/da5/4d0/c2fc4f762cf578e4b8b12a7b8406ef2be3-david-mcatee.2x.rsocial.w600.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/elijah-mcclain');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Elijah McClain</h3></p>
+          <img width="100%" src="https://pyxis.nymag.com/v1/imgs/3b2/9bd/ace6fc56c9e767e0b357e5398dbbaf0fc5-elijah-mclain-family-photo.2x.rsocial.w600.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/in-memory-of-tony-mcdade');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Tony McDade</h3></p>
+          <img width="100%" src="https://www.out.com/sites/default/files/tony-mcdade.jpg">
+        </div>  
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/rip-belly-mujinga');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Belly Mujinga</h3></p>
+          <img width="100%" src="https://cdn.cnn.com/cnnnext/dam/assets/200512154026-01-belly-mujinga-super-tease.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/for-james-scurlocks-family');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>James Scurlock</h3></p>
+          <img width="100%" src="https://www.democracynow.org/images/headlines/64/52864/quarter_hd/h5-outrage-after-white-bar-owner-who-shot-killed-22-year-old-james-scurlock-dodges-criminal-charge.jpg">
+        </div>
+      </div>
+      <div class="card2" onclick="window.open('https://www.gofundme.com/f/9v4q2-justice-for-breonna-taylor');" style="cursor: pointer;">
+        <div class="container">
+          <p><h3>Breonna Taylor</h3></p>
+          <img width="100%" src="https://www.etonline.com/sites/default/files/styles/video_1920x1080/public/images/2020-06/eto_trending_breonnataylor_060520vidpic.jpg?h=d1cb525d&itok=i3lqQgi8">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="NoMoney" class="tabcontent">
+  	<h3>Videos that Donate Ad Revenue</h3>
+  	<p>If you're unable to give your own money, you can still donate! Below is a playlist of videos that donate their ad revenue to various BLM organizations. Playlist credit to Olivia Grey</p>
+    <div class="ytcontainer"> 
+      <iframe class="responsive-iframe" src="https://www.youtube.com/embed/videoseries?list=PLtooIklzheqzORPbQBiEZKsw2T4s6SUxv" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Duckhacks for Social Good 2020</h2>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
